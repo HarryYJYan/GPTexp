@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Login</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #loginContainer {
+      text-align: center;
+    }
+
+    #loginForm {
+      display: inline-block;
+      text-align: left;
+    }
+
+    #loginForm div {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="loginContainer">
+    <h2>User Login</h2>
+    <form id="loginForm">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Get the entered username and password
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // You can perform further validation or send the data to the backend for authentication
+      
+      // For this example, let's just log the values to the console
+      console.log("Username: " + username);
+      console.log("Password: " + password);
+
+      // Reset the form fields
+      document.getElementById("loginForm").reset();
+
+      // Redirect to the main experiment page
+      window.location.href = "0_experiment.html";
+    });
+  </script>
+</body>
+</html>
